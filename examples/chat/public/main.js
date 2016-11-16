@@ -241,6 +241,11 @@ $(function() {
     addChatMessage(data);
   });
 
+  // whenever there is a location update by the clients
+  socket.on('location', function (data) {
+    addChatMessage(data);
+  });
+
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user joined', function (data) {
     log(data.username + ' joined');
